@@ -29,8 +29,7 @@ def regenerate_table(r):
     name = 'name'
     passw = '123'
     # run in the command-line:
-    queries = f"u = User.objects.filter(username='{name}')"
-    queries += f"\nu.account.balance = {balance})"
+    queries = f"u = User.objects.filter(username='{name}').first().account.balance = {balance}"
     # queries += "\n"
     
     subprocess.run(['./manage.py','shell_plus', '--quiet-load','-c', queries])
