@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block style %}
+<style>
+    .withdrew-form  {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+    .withdrew-form p {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .withdrew-form .submit-btn {
+        width: 120px;
+        padding: 10px;
+        margin: 5px 0px 10px 0px;
+    }
+
+    .content {
+        height: 80vh;
+        width: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .blink {
+        animation: blinker 2s step-start infinite;
+    }
+
+    @keyframes blinker {
+        30% {
+            opacity: 0;
+        }
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div>
+        <h3 style="color: orange; align-text:center;">You can withdrew only when signed-in!
+        <br>Try withdrew 500.
+        </h3>
+        {% if request.GET.hack  %} 
+            <h3 style="color: red; align-text: center;"> You just lost some money!<h3>
+        {% endif %}
+        <form method='POST' action="{% url 'withdrew' %}" class="withdrew-form">
+            <p>{{ form.current_balance.label_tag }} {{ form.current_balance }}</p>
+            {{ form.withdrew.errors }}
+            <p>{{ form.withdrew.label_tag }} {{ form.withdrew }}</p>
+            <input class="submit-btn" type="submit" value="Withdrew money">
+            <a href="{% url 'logout' %}">logout</a>
+        </form>
+    </div>
+
+    <div class="bottom">
+        <h3 style="color: red" class="blink">Then while browsing the web with this tab on, you click this: </h3>
+        >>>  <a href="http://demo-csrf-attack.herokuapp.com/csrf_attack/">link to a demo CSRF attack </a>
+    </div>
+</div>
+{% endblock %}

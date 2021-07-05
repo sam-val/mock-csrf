@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="content">
+{% if form.errors %}
+<p>Password and username are not correct. Enter again.<br>Username="name" Passoword="123"</p>
+{% endif %}
+
+<h2>Imagine you're logging into your bank account...<br>using username:<i style="color: green">name</i> & password:<i style="color: green;">123</i></h2>
+{% if request.session.just_expired %}
+    <h3> Your login session expired. Please login again.</h3>
+{% endif %}
+<form action="{% url 'login' %}" method="POST">
+<table>
+<tr>
+    <td>{{form.username.label_tag}}</td>
+    <td>{{form.username}}</td>
+</tr>
+<tr>
+    <td>{{form.password.label_tag}}</td>
+    <td>{{form.password}}</td>
+</tr>
+</table>
+<input type="submit" value="Login">
+<input type="hidden" name="next" value="{{ next }}">
+</form>
+
+</div>
+{% endblock %}

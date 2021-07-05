@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
+
+    <title>Document</title>
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <a href="{% url 'regenerate' %}">click here to reset balance & database </a>
+    <h2 style="color: maroon; text-align: center;">Let's try to cross-site request forge this site.</h2>
+    <div class="wrapper" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    {% block content %}
+    {% endblock %}
+
+    </div>
+    
+</body>
+</html>
