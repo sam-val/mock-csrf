@@ -147,7 +147,7 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTO_LOGOUT_DELAY = 1 # MINUTES
+AUTO_LOGOUT_DELAY = 5 # MINUTES
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
