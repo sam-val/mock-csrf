@@ -32,8 +32,8 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = ["demo-csrf-attack.herokuapp.com", "localhost"]
 
 
-SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE= None
+#SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SAMESITE= None
 
 # Application definition
 
