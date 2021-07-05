@@ -29,7 +29,7 @@ def regenerate_table(r):
     name = 'name'
     passw = '123'
     # run in the command-line:
-    subprocess.run(['./manage.py', 'reset_db', '--noinput', '--close-sessions']) # reset db using the django_extensions module; it destroys the whole db
+    subprocess.run(['pg:reset', 'DATABASE_URL']) # reset db ; it destroys the whole db
     subprocess.run(['./manage.py','migrate']) # apply all migrations 
 
     queries = f"u = User.objects.create_user(username='{name}', password='{passw}')"
