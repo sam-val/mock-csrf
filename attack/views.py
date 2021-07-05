@@ -44,7 +44,7 @@ import sys
 @csrf_exempt
 def withdrew(r):
     try:
-        if r.session['just_expired']:
+        if r.session['just_expired'] == 0:
             return HttpResponseRedirect(reverse('login'))
     except KeyError:
         pass
