@@ -60,7 +60,7 @@ def withdrew(r):
                 account.balance -= withdrew_amount
                 account.save()
                 #return HttpResponseRedirect(reverse('account') + f"?hack={hack}")
-                return HttpResponse("nothing",status_code=200)
+                return HttpResponse("nothing")
             else:
                 return render(r, "balance.html", {'form': form})
         else:
