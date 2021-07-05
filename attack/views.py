@@ -42,8 +42,11 @@ def regenerate_table(r):
 
 import sys
 
+
 @csrf_exempt
 def withdrew(r):
+    for key, value in r.session.items():
+        print(f"{key} => {value}", file=sys.stdout)
     if r.method == 'POST':
         if r.user.is_authenticated:
             hack = ''
