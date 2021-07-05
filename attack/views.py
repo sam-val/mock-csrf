@@ -29,11 +29,8 @@ def regenerate_table(r):
     name = 'name'
     passw = '123'
     # run in the command-line:
-    subprocess.run(['heroku','pg:reset','DATABASE_URL']) # reset db ; it destroys the whole db
-    subprocess.run(['./manage.py','migrate']) # apply all migrations 
-
-    queries = f"u = User.objects.create_user(username='{name}', password='{passw}')"
-    queries += f"\nAccount.objects.create(user=u, balance={balance})"
+    queries = f"u = User.objects.filter(username='{name}'"
+    queries += f"\nu.account.balance = {balance})"
     # queries += "\n"
     
     subprocess.run(['./manage.py','shell_plus', '--quiet-load','-c', queries])
