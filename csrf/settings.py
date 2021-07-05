@@ -18,8 +18,8 @@ import django_heroku
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
- Quick-start development settings - unsuitable for production
- See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
@@ -32,8 +32,8 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = ["demo-csrf-attack.herokuapp.com", "localhost"]
 
 
-#SESSION_COOKIE_SECURE = True
-#SESSION_COOKIE_SAMESITE= None
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE= None
 
 # Application definition
 
