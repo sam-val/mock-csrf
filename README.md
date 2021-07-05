@@ -1,3 +1,3 @@
-# app to demonstrate cross site request forgery
+### an app to demonstrate the cross site request forgery - csrf 
 
-The app is deployed on Heroku: https://demo-csrf-attack.herokuapp.com/
+It is now deployed on Heroku: https://demo-csrf-attack.herokuapp.com/
