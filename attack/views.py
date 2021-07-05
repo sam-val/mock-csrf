@@ -43,6 +43,11 @@ import sys
 
 @csrf_exempt
 def withdrew(r):
+    try:
+        if r.session['just_expired']:
+            return HttpResponseRedirect(reverse('login'))
+    except KeyError:
+        pass
     for key, value in r.session.items():
         print(f"{key} => {value}", file=sys.stdout)
     if r.method == 'POST':
