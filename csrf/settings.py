@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ["demo-csrf-attack.herokuapp.com", "localhost"]
 
 
 SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE= "None"
+SESSION_COOKIE_SAMESITE= "Lax"
 
 # Application definition
 
