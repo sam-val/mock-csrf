@@ -42,7 +42,6 @@ def regenerate_table(r):
 
 import sys
 
-@login_required
 @csrf_exempt
 def withdrew(r):
     if r.method == 'POST':
